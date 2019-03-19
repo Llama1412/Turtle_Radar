@@ -14,12 +14,19 @@ from consolemenu.items import *
 players = []
 menu = SelectionMenu(players)
 
+with urllib.request.urlopen("https://state.hoggitworld.com/f67eecc6-4659-44fd-a4fd-8816c993ad0e") as url:
+	data = json.loads(url.read().decode())
+	for i in range(len(data["objects"])):
+		if data["objects"][i]["Flags"]["Human"] == True:
+			players.append(data["objects"][i]["UnitName"])
 
+player_index = menu.get_selection(players, title="GAW Turtle Radar", subtitle="By [CVW-69] Llama")
+target = players[player_index]
 
 turtles = []
 tt.bgcolor("black")
 tt.setup(width=600,height=600,startx=300,starty=300)
-target = ""
+
 
 class THREAT:
 	HIGH = "red"
@@ -127,14 +134,7 @@ def calculate_initial_compass_bearing(pointA, pointB):
 	compass_bearing = (initial_bearing + 360) % 360
 	return compass_bearing
 
-with urllib.request.urlopen("https://state.hoggitworld.com/f67eecc6-4659-44fd-a4fd-8816c993ad0e") as url:
-	data = json.loads(url.read().decode())
-	for i in range(len(data["objects"])):
-		if data["objects"][i]["Flags"]["Human"] == True:
-			players.append(data["objects"][i]["UnitName"])
 
-player_index = menu.get_selection(players, title="GAW Turtle Radar", subtitle="By [CVW-69] Llama")
-target = players[player_index]
 
 
 drawRadarBackground()
