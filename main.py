@@ -202,32 +202,6 @@ while True:
                         turtles[-1].write(Type)
                         onscreen = onscreen + 1
 
-        # else if data["objects"][i]["Flags"]["Human"] == True:
-        # 	Type = plane["Name"]
-        # 	Threat = threats[plane["Name"]]
-        # 	Lat = plane["LatLongAlt"]["Lat"]
-        # 	Lon = plane["LatLongAlt"]["Long"]
-        # 	Alt = plane["LatLongAlt"]["Alt"]
-        # 	ALtFeet = float(Alt/0.3048)
-        # 	TPos = (Lat, Lon)
-        # 	Distance = geopy.distance.distance(MyPos,TPos).nm
-        # 	A = (MyLat, MyLon)
-        # 	B = (Lat, Lon)
-        # 	Bearing = calculate_initial_compass_bearing(A, B)
-        # 	Heading = getHeading(plane["Heading"])
-        # 	if Distance <= 100 and ALtFeet >= 500:
-        # 		turtles.append(tt.Turtle())
-        # 		turtles[-1].speed(0)
-        # 		turtles[-1].turtlesize(1,3)
-        # 		turtles[-1].pu()
-        # 		turtles[-1].color(random.choice(colors))
-        # 		turtles[-1].right(Bearing-90)
-        # 		turtles[-1].forward(2.5*Distance)
-        # 		lturn = 90-Heading
-        # 		turtles[-1].left(lturn)
-        # 		turtles[-1].write(Type)
-        # 		onscreen = onscreen+1
-
     tt.title("Total targets shown: " + str(onscreen))
     Event().wait(10)
     Pointer.reset()
