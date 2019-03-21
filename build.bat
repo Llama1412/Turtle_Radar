@@ -1,1 +1,0 @@
-pyinstaller main.py --onefile --icon=radar_burned.ico --name "Turtle Radar"
