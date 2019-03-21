@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['C:\\Users\\DomTF\\Documents\\Coding\\Python\\Turtle Radar'],
+             pathex=['C:\\Users\\DomTF\\Documents\\Coding\\Python\\Turtle_Radar'],
              binaries=[],
              datas=[],
              hiddenimports=[],
@@ -29,4 +29,4 @@ exe = EXE(pyz,
           strip=False,
           upx=True,
           runtime_tmpdir=None,
-          console=True )
+          console=True , icon='radar_burned.ico')
